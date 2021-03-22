@@ -1,0 +1,18 @@
+/* Fonts */
+
+.st-font {
+    font-family: 'Truculenta', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.continer-fluid {
+    min-height: 100%;
+}
+
+a.nav-link:hover {
+    color: yellow;
+}
