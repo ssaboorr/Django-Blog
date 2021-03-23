@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'post/base.html' %} {% load static %} {% block content %}
 
-</body>
-</html>
+<div class="col-sm-10 my-5">
+    <h3>Login</h3>
+    <form action="" method="post">
+        {% csrf_token %} {% for fm in form %}
+
+        <div class="form-group">
+            {{fm.label_tag}} {{fm}} <small class="text-danger"> {{fm.errors|striptags}} </small> {% endfor %}
+        </div>
+
+        <input type="Submit" value="Login" class="btn btn-primary my-2"> 
+            <a href="{% url 'signup' %}">Dont have an acoount?</a>
+
+        
+        {% if form.non_fields_errors %} {% for errors in form.non_fields_errors %}
+    <p class="alert alert-danger my-3">{{errors}}</p>
+         {% endfor %} {% endif %}
+    </form>
+</div>
+
+{% endblock content %}

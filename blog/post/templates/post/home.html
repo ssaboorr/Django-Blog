@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'post/base.html' %}
+{% load static %}
 
-</body>
-</html>
+
+
+{% block content %}
+
+<div class="col-sm-10 my-5">
+<h3>Home Page</h3>
+{% for post in posts %}
+<div class="jumbotron  jumbotron-fluid my-5 bg-dark">
+  <div class="container">
+    <h1 class="display-4 text-white font-weight-bold">{{post.title}}</h1>
+    <hr class=bg-light >
+    <p class="lead text-white">{{post.desc}}</p>
+
+    <hr>
+            <small class="lead text-white" >{{post.timestamp}}</small>
+
+  </div>
+</div>
+{% endfor %}
+</div>
+
+{% endblock content %}

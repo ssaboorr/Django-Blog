@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'post/base.html' %}
+{% load static %}
 
-</body>
-</html>
+ {% block msg %}
+{% if messages %}
+{% for message in messages %}
+<p {% if message.tags %} class="alert alert-{{message.tags}} mb-5 text-black" {% endif %}> <strong> {{message}}</strong> </p>
+{% endfor %}
+{% endif %}
+</div>
+{% endblock msg %}
+
+{% block content %}
+
+<div class="col-sm-10 my-5">
+<h3>Dashboard</h3>
+
+</div>
+
+{% endblock content %}
