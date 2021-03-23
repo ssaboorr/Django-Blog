@@ -24,5 +24,8 @@ urlpatterns = [
     path('logout/', pv.user_logout, name='logout'),
     path('dashboard/', pv.dashboard, name='dashboard'),
     path('signup/', pv.user_register, name='signup'),
+    path('add/', pv.addpost, name='addpost'),
+    path('update/<int:id>', pv.updatepost, name='update'),
+    path('delete/<int:id>', pv.deletepost, name='delete'),
 
 ]
